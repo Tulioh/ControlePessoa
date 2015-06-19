@@ -3,7 +3,7 @@ var express = require( "express" );
 var app = require( "./config/express" )(app);
 var config = require('./config/config');
 
-http.createServer( app ).listen( config.port, config.address, function() {
+http.createServer( app ).listen( config.port, function() {
     console.log('Express Http Server ' +
         config.address + ' escutando na porta ' + config.port);
 });
