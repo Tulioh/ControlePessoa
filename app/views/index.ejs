@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+  	<link rel="stylesheet" type="text/css" href="estilo.css">
+  	<title>Controle de Pessoa</title>
+</head>
+<body>
+	<h3>Pessoas cadastradas</h3>
+	<a href="/pessoa" title="Nova Pessoa">Nova Pessoa</a>
+	<br />
+	<table>
+		<thead>
+			<tr>
+				<td>Nome</td>
+				<td>CPF</td>
+				<td>E-mail</td>
+				<td>Telefone</td>
+				<td>Opcoes</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% pessoas.forEach(function(pessoa) { %>
+				<tr>
+					<td><%= pessoa.nome %></td>
+					<td><%= pessoa.cpf %></td>
+					<td><%= pessoa.email %></td>
+					<td><%= pessoa.telefone %></td>
+					<td><a href="excluirPessoa/?id=<%= pessoa.id %>" title="Excluir">Excluir</a></td>
+				</tr>
+			<% }); %>
+			
+		</tbody>
+	</table>
+</body>
+</html>

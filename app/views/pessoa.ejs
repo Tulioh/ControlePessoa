@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+  	<link rel="stylesheet" type="text/css" href="estilo.css">
+  	<title>Controle de Pessoa</title>
+</head>
+<body>
+	<% if( locals.mensagem && mensagem.tipo === "ERRO" ) { %>
+		<p><%= mensagem.texto %></p>
+	<% } %>
+
+	<form method="post" action="/pessoa">
+		<h3>Cadastrar Pessoa</h3>
+		
+		<input type="hidden" name="id" value="<%= pessoa.id %>" />
+		
+		<label>Nome</label>
+		<input type="text" name="nome" value="<%= pessoa.nome %>" />
+		<br />
+		<label>CPF</label>
+		<input type="text" name="cpf" value="<%= pessoa.cpf %>" />
+		<br />
+		<label>E-mail</label>
+		<input type="text" name="email" value="<%= pessoa.email %>" />
+		<br />
+		<label>Telefone</label>
+		<input type="text" name="telefone" value="<%= pessoa.telefone %>" />
+		
+		<input type="submit" value="Salvar" />
+	</form>
+</body>
+</html>
