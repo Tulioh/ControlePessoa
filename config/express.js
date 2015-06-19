@@ -1,10 +1,11 @@
 var express = require( "express" );
 var load  = require( "express-load" );
 var bodyParser = require( "body-parser" );
+var config = require( "./config" );
 
 module.exports = function() {
     var app = express();
-    app.set( "port", 3000 );
+    app.set( "port", config.port );
     app.use( express.static( "./public" ) );
     app.set( "view engine", "ejs" );
     app.set( "views", "./app/views" );
