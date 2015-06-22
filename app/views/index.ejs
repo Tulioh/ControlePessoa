@@ -6,6 +6,10 @@
   	<title>Controle de Pessoa</title>
 </head>
 <body>
+	<% if( locals.mensagem && mensagem.tipo === "ERRO" ) { %>
+		<p><%= mensagem.texto %></p>
+	<% } %>
+	
 	<h3>Pessoas cadastradas</h3>
 	<a href="/pessoa" title="Nova Pessoa">Nova Pessoa</a>
 	<br />
@@ -26,7 +30,8 @@
 					<td><%= pessoa.cpf %></td>
 					<td><%= pessoa.email %></td>
 					<td><%= pessoa.telefone %></td>
-					<td><a href="excluirPessoa/?id=<%= pessoa.id %>" title="Excluir">Excluir</a></td>
+					<td><a href="/editarPessoa/?id=<%= pessoa.id %>" title="Editar">Editar</a></td>
+					<td><a href="/excluirPessoa/?id=<%= pessoa.id %>" title="Excluir">Excluir</a></td>
 				</tr>
 			<% }); %>
 			

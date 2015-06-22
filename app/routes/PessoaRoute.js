@@ -8,6 +8,9 @@ module.exports = function( app ) {
         .get( controller.cadastrarPessoa )
         .post( controller.salvarPessoa ) ;
     
+    app.route( "/editarPessoa" )
+        .get( controller.editarPessoa );
+    
     app.route( "/excluirPessoa" )
         .get( controller.excluirPessoa );
 };

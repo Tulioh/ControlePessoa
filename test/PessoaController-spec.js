@@ -30,7 +30,7 @@ describe("PessoaController", function() {
 					   nome : "teste",
 					   cpf : "28637771653",
 					   email : "teste@teste.com",
-					   telefone : "99999999"
+					   telefone : "1199999999"
 				   }
 			   };
 			   
@@ -38,9 +38,7 @@ describe("PessoaController", function() {
 			   
 			   PessoaController.salvarPessoa( request, response );
 
-			   expect(response.view).toBe( "index" );
-			   expect(response.object.pessoas).toBeArray();
-			   expect(response.object.pessoas.length).toNotEqual( 0 );
+			   expect(response.view).toBe( "/" );
 		});
 		
 		it("Espero que quando chamar a função salvarPessoa, " +
@@ -50,7 +48,7 @@ describe("PessoaController", function() {
 					   nome : "teste",
 					   cpf : "28637771654",
 					   email : "teste@teste.com",
-					   telefone : "99999999"
+					   telefone : "1199999999"
 				   }
 			   };
 			   
@@ -76,7 +74,7 @@ describe("PessoaController", function() {
 					   nome : "teste",
 					   cpf : "28637771653",
 					   email : "teste@teste",
-					   telefone : "99999999"
+					   telefone : "1199999999"
 				   }
 			   };
 			   
@@ -89,6 +87,32 @@ describe("PessoaController", function() {
 				   {
 					   pessoa : request.body,
 					   mensagem : { tipo: 'ERRO', texto: 'Erro na validação do e-mail' }
+					}
+				);
+				
+			   expect( JSON.stringify(response) ).toEqual( JSON.stringify(esperado) );
+		});
+		
+		it("Espero que quando chamar a função salvarPessoa, " +
+		   "ela me retorne um erro de valicao do telefone", function() {
+			   var request = {
+				   body : {
+					   nome : "teste",
+					   cpf : "28637771653",
+					   email : "teste@teste.com",
+					   telefone : "0199999999"
+				   }
+			   };
+			   
+			   var response = criarEhObterObjectoResponse();
+			   
+			   PessoaController.salvarPessoa( request, response );
+			   
+			   var esperado = criarEhObterObjetoEsperado(
+				   "pessoa",
+				   {
+					   pessoa : request.body,
+					   mensagem : { tipo: 'ERRO', texto: 'Erro na validação do telefone' }
 					}
 				);
 				
@@ -123,6 +147,20 @@ describe("PessoaController", function() {
 			expect(retorno).toBe( false );
 		});
 	});
+	
+	describe( "ValidarTelefone", function() {
+		it("Espero true como retorno quando passar um telefone válido", function() {
+			var retorno = PessoaController.validarTelefone("1199999999");
+			
+			expect(retorno).toBe( true );
+		});
+		
+		it("Espero false como retorno quando passar um telefone inválido", function() {
+			var retorno = PessoaController.validarEmail("0199999999");
+			
+			expect(retorno).toBe( false );
+		});
+	});
 });
 
 function criarEhObterObjectoResponse() {
@@ -133,6 +171,10 @@ function criarEhObterObjectoResponse() {
 	   render : function( view, object ) {
 		   this.view = view;
 		   this.object = object;
+	   },
+	   
+	   redirect : function( view ) {
+		   this.view = view;
 	   }
    };	
 };
