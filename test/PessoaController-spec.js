@@ -3,6 +3,18 @@ var PessoaController = require("../app/controllers/PessoaController")();
 require('jasmine-expect');
 
 describe("PessoaController", function() {
+	describe( "ListarTodasPessoas", function() {
+		it( "Espero receber como retorno a view 'index' e uma lista de pessoas", function() {
+			var response = criarEhObterObjectoResponse();
+			var request = {};
+			
+			PessoaController.listarTodasPessoas( request, response );
+			
+			expect( response.view ).toBe( "index" );
+			expect( response.object.pessoas ).toBeArray();
+		});	
+	})
+	
 	describe("CadastrarPessoa", function() {
 		it("Espero que quando chamar a função cadastrarPessoa, " +
 		   "ela me retorne a view 'pessoa' e um objeto pessoa vazio", function() {
@@ -27,6 +39,25 @@ describe("PessoaController", function() {
 			   var request = {
 				   body : {
 					   id : -1,
+					   nome : "teste",
+					   cpf : "28637771653",
+					   email : "teste@teste.com",
+					   telefone : "1199999999"
+				   }
+			   };
+			   
+			   var response = criarEhObterObjectoResponse();
+			   
+			   PessoaController.salvarPessoa( request, response );
+
+			   expect(response.view).toBe( "/" );
+		});
+		
+		it("Espero que quando chamar a função salvarPessoa, e existir o ID passado, " +
+		   "seja retornado a view 'index' e uma array de pessoas com no minimo uma pessoa", function() {
+			   var request = {
+				   body : {
+					   id : 0,
 					   nome : "teste",
 					   cpf : "28637771653",
 					   email : "teste@teste.com",
@@ -120,6 +151,40 @@ describe("PessoaController", function() {
 		});
 	});
 	
+	describe( "EditarPessoas", function() {
+		it( "Espero passar um ID de uma pessoa que não está cadastrada e ele me retornar um erro", function() {
+			var request = { query : { id : -1 } };
+			var response = criarEhObterObjectoResponse();
+			
+			PessoaController.editarPessoa( request, response );
+			
+			expect( response.view ).toBe( "index" );
+			expect( response.object.pessoas ).toBeArray();
+			expect( response.object.mensagem.texto ).toBe( "Não existe pessoa com esse ID" );
+		});
+		
+		it( "Espero passar um ID de uma pessoa que está cadastrada e ele me retornar o objeto editado", function() {
+			var request = { query : { id : 0 } };
+			var response = criarEhObterObjectoResponse();
+			
+			PessoaController.editarPessoa( request, response );
+		
+			expect( response.view ).toBe( "pessoa" );
+			expect( response.object.pessoa ).toBeObject();
+		});
+	});
+	
+	describe( "ExcluirPessoa", function() {
+		it( "", function() {
+			var request = { query : { id : -1 } };
+			var response = criarEhObterObjectoResponse();
+			
+			PessoaController.excluirPessoa( request, response );
+			
+			expect( response.view ).toBe("/");
+		});
+	});
+	
 	describe( "ValidarCPF", function() {
 		it("Espero true como retorno quando passar um CPF válido", function() {
 			var retorno = PessoaController.validarCPF("28637771653");
@@ -149,10 +214,16 @@ describe("PessoaController", function() {
 	});
 	
 	describe( "ValidarTelefone", function() {
-		it("Espero true como retorno quando passar um telefone válido", function() {
+		it("Espero true como retorno quando passar um telefone com DDD válido e acima de 10 digitos", function() {
 			var retorno = PessoaController.validarTelefone("1199999999");
 			
 			expect(retorno).toBe( true );
+		});
+		
+		it("Espero true como retorno quando passar um telefone com DDD inválido e abaixo de 10 digitos", function() {
+			var retorno = PessoaController.validarTelefone("009999999");
+			
+			expect(retorno).toBe( false );
 		});
 		
 		it("Espero false como retorno quando passar um telefone inválido", function() {

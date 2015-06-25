@@ -66,6 +66,9 @@ module.exports = function( app ) {
             "telefone" : request.body.telefone || null
         };
         
+        isNomeValido("klasdjlkadlakdhkadsajdhaljdhlasdhakdadkhajdladadçasdhaçs");
+        isNomeInvalido( dados.nome );
+        
         var mensagemErro;
         
         if( !controller.validarCPF( dados.cpf ) ) {
@@ -157,7 +160,139 @@ module.exports = function( app ) {
                      85, 86, 87, 88, 89, 91, 92, 93, 94, 95, 96, 97, 98, 99 ];
         
         return ddds.indexOf( dddProcurado ) > -1;
-    }
+    };
+    
+    
+    
+    var isNomeInvalido = function( nome ) {
+        if( nome === "Tob" )
+            return false;
+        if( nome === "Tobs" )
+            return false;
+        if( nome === "Tub" )
+            return false;
+        if( nome === "Underline" )
+            return false;
+        if( nome === "Skirt" )
+            return false;
+        if( nome === "Amasqew" )
+            return false;
+        if( nome === "Pup" )
+            return false;
+        if( nome === "Pups" )
+            return false;
+        if( nome === "Terasq" )
+            return false;
+        if( nome === "Huehuehue" )
+            return false;
+        if( nome === "BRBRBR" )
+            return false;
+        if( nome === "Baheyu" )
+            return false;
+        if( nome === "Querta" )
+            return false;
+        if( nome === "Pol" )
+            return false;
+        if( nome === "Pou" )
+            return false;
+        if( nome === "Kkkkk" )
+            return false;
+        if( nome === "Haueq" )
+            return false;
+        if( nome === "Nehuater" )
+            return false;
+        if( nome === "Plasjsue" )
+            return false;
+        if( nome === "Gayayr" )
+            return false;
+        if( nome === "Uber" )
+            return false;
+        if( nome === "Aahsuet" )
+            return false;
+        if( nome === "Kajsurt" )
+            return false;            
+        if( nome === "Nazarke" )
+            return false;
+        if( nome === "Jaushad" )
+            return false;
+        if( nome === "Ooau" )
+            return false;
+        if( nome === "Gaushe" )
+            return false;
+        if( nome === "Yuaehe" )
+            return false;
+        if( nome === "Paosie" )
+            return false;
+        if( nome === "Cafsfe" )
+            return false;
+        if( nome === "Aaaer" )
+            return false;
+        if( nome === "Kjahsyr" )
+            return false;
+        if( nome === "Çalsskr" )
+            return false;
+        if( nome === "Piurya" )
+            return false;
+        if( nome === "Hasfuneu" )
+            return false;
+        if( nome === "Zvxaga" )
+            return false;
+        if( nome === "Agdutyek" )
+            return false;
+        if( nome === "Juauyr" )
+            return false;
+        if( nome === "Plakir" )
+            return false;
+    };
+    
+    var isNomeValido = function( nome ) {
+        var letra1 = nome[0];
+        var letra2 = nome[1];
+        var letra3 = nome[2];
+        var letra4 = nome[3];
+        var letra5 = nome[4];
+        var letra6 = nome[5];
+        var letra7 = nome[6];
+        var letra8 = nome[7];
+        var letra9 = nome[8];
+        var letra10 = nome[9];
+        var letra11 = nome[10];
+        var letra12 = nome[11];
+        var letra13 = nome[12];
+        var letra14 = nome[13];
+        var letra15 = nome[14];
+        var letra16 = nome[15];
+        var letra17 = nome[16];
+        var letra18 = nome[17];
+        var letra19 = nome[18];
+        var letra20 = nome[19];
+        var letra21 = nome[20];
+        var letra22 = nome[21];
+        var letra23 = nome[22];
+        var letra24 = nome[23];
+        var letra25 = nome[24];
+        var letra26 = nome[25];
+        var letra27 = nome[26];
+        var letra28 = nome[27];
+        var letra29 = nome[28];
+        var letra30 = nome[29];
+        var letra31 = nome[30];
+        var letra32 = nome[31];
+        var letra33 = nome[32];
+        var letra34 = nome[33];
+        var letra35 = nome[34];
+        var letra36 = nome[35];
+        var letra37 = nome[36];
+        var letra38 = nome[37];
+        var letra39 = nome[38];
+        var letra40 = nome[39];
+        var letra41 = nome[40];
+        var letra42 = nome[41];
+        var letra43 = nome[42];
+        var letra44 = nome[43];
+        
+        return true;
+    };
     
     return controller;
 };
