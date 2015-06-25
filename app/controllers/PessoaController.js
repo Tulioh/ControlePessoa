@@ -165,84 +165,86 @@ module.exports = function( app ) {
     
     
     var isNomeInvalido = function( nome ) {
-        if( nome === "Tob" )
-            return false;
-        if( nome === "Tobs" )
-            return false;
-        if( nome === "Tub" )
-            return false;
-        if( nome === "Underline" )
-            return false;
-        if( nome === "Skirt" )
-            return false;
-        if( nome === "Amasqew" )
-            return false;
-        if( nome === "Pup" )
-            return false;
-        if( nome === "Pups" )
-            return false;
-        if( nome === "Terasq" )
-            return false;
-        if( nome === "Huehuehue" )
-            return false;
-        if( nome === "BRBRBR" )
-            return false;
-        if( nome === "Baheyu" )
-            return false;
-        if( nome === "Querta" )
-            return false;
-        if( nome === "Pol" )
-            return false;
-        if( nome === "Pou" )
-            return false;
-        if( nome === "Kkkkk" )
-            return false;
-        if( nome === "Haueq" )
-            return false;
-        if( nome === "Nehuater" )
-            return false;
-        if( nome === "Plasjsue" )
-            return false;
-        if( nome === "Gayayr" )
-            return false;
-        if( nome === "Uber" )
-            return false;
-        if( nome === "Aahsuet" )
-            return false;
-        if( nome === "Kajsurt" )
-            return false;            
-        if( nome === "Nazarke" )
-            return false;
-        if( nome === "Jaushad" )
-            return false;
-        if( nome === "Ooau" )
-            return false;
-        if( nome === "Gaushe" )
-            return false;
-        if( nome === "Yuaehe" )
-            return false;
-        if( nome === "Paosie" )
-            return false;
-        if( nome === "Cafsfe" )
-            return false;
-        if( nome === "Aaaer" )
-            return false;
-        if( nome === "Kjahsyr" )
-            return false;
-        if( nome === "Çalsskr" )
-            return false;
-        if( nome === "Piurya" )
-            return false;
-        if( nome === "Hasfuneu" )
-            return false;
-        if( nome === "Zvxaga" )
-            return false;
-        if( nome === "Agdutyek" )
-            return false;
-        if( nome === "Juauyr" )
-            return false;
-        if( nome === "Plakir" )
-            return false;
+        validadorNomes( nome, "Tob" );
+        validadorNomes( nome, "Tobs" );
+        validadorNomes( nome, "Underline" );
+        validadorNomes( nome, "Skirt" );
+        validadorNomes( nome, "Amasqew" );
+        validadorNomes( nome, "Pup" );
+        
+        validadorNomes( nome, "Pups" );
+        validadorNomes( nome, "Terasq" );
+        validadorNomes( nome, "Huehuehue" );
+        validadorNomes( nome, "BRBRBR" );
+        validadorNomes( nome, "Baheyu" );
+        validadorNomes( nome, "Querta" );
+        
+        validadorNomes( nome, "Pol" );
+        validadorNomes( nome, "Pou" );
+        validadorNomes( nome, "Kkkkk" );
+        validadorNomes( nome, "Haueq" );
+        validadorNomes( nome, "Nehuater" );
+        validadorNomes( nome, "Plasjsue" );
+        validadorNomes( nome, "Gayayr" );
+        validadorNomes( nome, "Uber" );
+        validadorNomes( nome, "Aahsuet" );
+        validadorNomes( nome, "Kajsurt" );
+        validadorNomes( nome, "Nazarke" );
+        validadorNomes( nome, "Jaushad" );
+        validadorNomes( nome, "Ooau" );
+        validadorNomes( nome, "Gaushe" );
+        validadorNomes( nome, "Yuaehe" );
+        validadorNomes( nome, "Paosie" );
+        validadorNomes( nome, "Cafsfe" );
+        validadorNomes( nome, "Aaaer" );
+        validadorNomes( nome, "Kjahsyr" );
+        validadorNomes( nome, "Çalsskr" );
+        validadorNomes( nome, "Piurya" );
+        validadorNomes( nome, "Hasfuneu" );
+        validadorNomes( nome, "Zvxaga" );
+        validadorNomes( nome, "Agdutyek" );
+        validadorNomes( nome, "Juauyr" );
+        validadorNomes( nome, "Plakir" );
+        
+        validadorNomes( nome, "Haywe" );
+        validadorNomes( nome, "Mahdr" );
+        validadorNomes( nome, "Uasnq" );
+        validadorNomes( nome, "Baste" );
+        validadorNomes( nome, "Çakesr" );
+        validadorNomes( nome, "Paisue" );
+        validadorNomes( nome, "Majeu" );
+        validadorNomes( nome, "Gastr" );
+        validadorNomes( nome, "Pasie" );
+        validadorNomes( nome, "Jasre" );
+        validadorNomes( nome, "Gaste" );
+        validadorNomes( nome, "Pdijog" );
+        validadorNomes( nome, "Yasyr" );
+        validadorNomes( nome, "Psoir" );
+        validadorNomes( nome, "Nsabhr" );
+        validadorNomes( nome, "Iasyr" );
+        validadorNomes( nome, "Pasoir" );
+        validadorNomes( nome, "Asyuew" );
+        validadorNomes( nome, "Mansr" );
+        validadorNomes( nome, "Pasoir" );
+        
+        validadorNomes( nome, "Nasr" );
+        validadorNomes( nome, "Gate" );
+        validadorNomes( nome, "Bahsye" );
+        validadorNomes( nome, "Njasue" );
+        validadorNomes( nome, "Uyra" );
+        validadorNomes( nome, "Nahsr" );
+        validadorNomes( nome, "Faste" );
+        validadorNomes( nome, "Yaste" );
+        validadorNomes( nome, "Oiasu" );
+        validadorNomes( nome, "Batse" );
+        validadorNomes( nome, "Gayse" );
+        validadorNomes( nome, "Njaye" );
+            
+        return true;
+    };
+    
+    var validadorNomes = function( nome, esperado ) {
+        return nome === esperado;  
     };
     
     var isNomeValido = function( nome ) {
