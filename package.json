@@ -20,6 +20,9 @@
   },
   "scripts": {
     "test": "istanbul cover jasmine-node --captureExceptions test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coveragea",
+    "pre-integration" : "./sh-integration/start.sh",
+    "integration" : "./node_modules/.bin/protractor ./config/protractorConfig.js",
+    "pos-integration" : "./sh-integration/stop.sh",
     "jasmine": "jasmine-node test",
     "nodemon": "nodemon server.js",
     "start": "node server.js"
