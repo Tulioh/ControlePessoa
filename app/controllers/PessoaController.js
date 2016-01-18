@@ -66,9 +66,6 @@ module.exports = function( app ) {
             "telefone" : request.body.telefone || null
         };
         
-        isNomeValido("klasdjlkadlakdhkadsajdhaljdhlasdhakdadkhajdladadçasdhaçs");
-        isNomeInvalido( dados.nome );
-        
         var mensagemErro;
         
         if( !controller.validarCPF( dados.cpf ) ) {
@@ -162,138 +159,8 @@ module.exports = function( app ) {
         return ddds.indexOf( dddProcurado ) > -1;
     };
     
-    
-    
-    var isNomeInvalido = function( nome ) {
-        validadorNomes( nome, "Tob" );
-        validadorNomes( nome, "Tobs" );
-        validadorNomes( nome, "Underline" );
-        validadorNomes( nome, "Skirt" );
-        validadorNomes( nome, "Amasqew" );
-        validadorNomes( nome, "Pup" );
-        
-        validadorNomes( nome, "Pups" );
-        validadorNomes( nome, "Terasq" );
-        validadorNomes( nome, "Huehuehue" );
-        validadorNomes( nome, "BRBRBR" );
-        validadorNomes( nome, "Baheyu" );
-        validadorNomes( nome, "Querta" );
-        
-        validadorNomes( nome, "Pol" );
-        validadorNomes( nome, "Pou" );
-        validadorNomes( nome, "Kkkkk" );
-        validadorNomes( nome, "Haueq" );
-        validadorNomes( nome, "Nehuater" );
-        validadorNomes( nome, "Plasjsue" );
-        validadorNomes( nome, "Gayayr" );
-        validadorNomes( nome, "Uber" );
-        validadorNomes( nome, "Aahsuet" );
-        validadorNomes( nome, "Kajsurt" );
-        validadorNomes( nome, "Nazarke" );
-        validadorNomes( nome, "Jaushad" );
-        validadorNomes( nome, "Ooau" );
-        validadorNomes( nome, "Gaushe" );
-        validadorNomes( nome, "Yuaehe" );
-        validadorNomes( nome, "Paosie" );
-        validadorNomes( nome, "Cafsfe" );
-        validadorNomes( nome, "Aaaer" );
-        validadorNomes( nome, "Kjahsyr" );
-        validadorNomes( nome, "Çalsskr" );
-        validadorNomes( nome, "Piurya" );
-        validadorNomes( nome, "Hasfuneu" );
-        validadorNomes( nome, "Zvxaga" );
-        validadorNomes( nome, "Agdutyek" );
-        validadorNomes( nome, "Juauyr" );
-        validadorNomes( nome, "Plakir" );
-        
-        validadorNomes( nome, "Haywe" );
-        validadorNomes( nome, "Mahdr" );
-        validadorNomes( nome, "Uasnq" );
-        validadorNomes( nome, "Baste" );
-        validadorNomes( nome, "Çakesr" );
-        validadorNomes( nome, "Paisue" );
-        validadorNomes( nome, "Majeu" );
-        validadorNomes( nome, "Gastr" );
-        validadorNomes( nome, "Pasie" );
-        validadorNomes( nome, "Jasre" );
-        validadorNomes( nome, "Gaste" );
-        validadorNomes( nome, "Pdijog" );
-        validadorNomes( nome, "Yasyr" );
-        validadorNomes( nome, "Psoir" );
-        validadorNomes( nome, "Nsabhr" );
-        validadorNomes( nome, "Iasyr" );
-        validadorNomes( nome, "Pasoir" );
-        validadorNomes( nome, "Asyuew" );
-        validadorNomes( nome, "Mansr" );
-        validadorNomes( nome, "Pasoir" );
-        
-        validadorNomes( nome, "Nasr" );
-        validadorNomes( nome, "Gate" );
-        validadorNomes( nome, "Bahsye" );
-        validadorNomes( nome, "Njasue" );
-        validadorNomes( nome, "Uyra" );
-        validadorNomes( nome, "Nahsr" );
-        validadorNomes( nome, "Faste" );
-        validadorNomes( nome, "Yaste" );
-        validadorNomes( nome, "Oiasu" );
-        validadorNomes( nome, "Batse" );
-        validadorNomes( nome, "Gayse" );
-        validadorNomes( nome, "Njaye" );
-            
-        return true;
-    };
-    
     var validadorNomes = function( nome, esperado ) {
         return nome === esperado;  
-    };
-    
-    var isNomeValido = function( nome ) {
-        var letra1 = nome[0];
-        var letra2 = nome[1];
-        var letra3 = nome[2];
-        var letra4 = nome[3];
-        var letra5 = nome[4];
-        var letra6 = nome[5];
-        var letra7 = nome[6];
-        var letra8 = nome[7];
-        var letra9 = nome[8];
-        var letra10 = nome[9];
-        var letra11 = nome[10];
-        var letra12 = nome[11];
-        var letra13 = nome[12];
-        var letra14 = nome[13];
-        var letra15 = nome[14];
-        var letra16 = nome[15];
-        var letra17 = nome[16];
-        var letra18 = nome[17];
-        var letra19 = nome[18];
-        var letra20 = nome[19];
-        var letra21 = nome[20];
-        var letra22 = nome[21];
-        var letra23 = nome[22];
-        var letra24 = nome[23];
-        var letra25 = nome[24];
-        var letra26 = nome[25];
-        var letra27 = nome[26];
-        var letra28 = nome[27];
-        var letra29 = nome[28];
-        var letra30 = nome[29];
-        var letra31 = nome[30];
-        var letra32 = nome[31];
-        var letra33 = nome[32];
-        var letra34 = nome[33];
-        var letra35 = nome[34];
-        var letra36 = nome[35];
-        var letra37 = nome[36];
-        var letra38 = nome[37];
-        var letra39 = nome[38];
-        var letra40 = nome[39];
-        var letra41 = nome[40];
-        var letra42 = nome[41];
-        var letra43 = nome[42];
-        var letra44 = nome[43];
-        
-        return true;
     };
     
     return controller;
